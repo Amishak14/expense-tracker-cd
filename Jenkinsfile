@@ -21,7 +21,7 @@ pipeline {
 
         sh "git config user.email 18ec007.amisha@sjec.ac.in"
         sh "git config user.name Amishak14"
-        sh "cat ./my-folder/manifest.yaml"
+        sh "cat manifest.yaml"
         echo "${DOCKERTAG}"
         sh "sed -i 's+image-registry.openshift-image-registry.svc:5000/amisha-jenkins/node-backend:.*+image-registry.openshift-image-registry.svc:5000/amisha-jenkins/node-backend:${DOCKERTAG}+g' manifest.yaml"
         sh "sed -i 's+image-registry.openshift-image-registry.svc:5000/amisha-jenkins/node-frontend:.*+image-registry.openshift-image-registry.svc:5000/amisha-jenkins/node-frontend:${DOCKERTAG}+g' manifest.yaml"
