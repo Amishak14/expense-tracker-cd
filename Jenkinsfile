@@ -19,8 +19,8 @@ pipeline {
 
  
 
-        sh "git config user.email 18ec007.amisha@sjec.ac.in"
-        sh "git config user.name Amishak14"
+        sh 'git config user.email "${GITHUB_EMAIL}"'
+        sh 'git config user.name "${GITHUB_USERNAME}"'
         sh "cat manifest.yaml"
         echo "${TAG}"
         sh "sed -i 's+image-registry.openshift-image-registry.svc:5000/amisha-jenkins/node-backend:.*+image-registry.openshift-image-registry.svc:5000/amisha-jenkins/node-backend:${TAG}+g' manifest.yaml"
